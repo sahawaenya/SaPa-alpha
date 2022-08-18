@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/nav.ejs')%>
+
+    <button><a href="/diseases/add">Add New Disease</a></button>
+
+    <h1>Diseases List</h1>
+
+    <% diseases.forEach(el => { %>
+        <h3><%= el.name %></h3>
+
+        <p><%= el.description %> </p>
+
+        <button><a href="/diseases/edit/<%= el.id %> ">Edit</a></button>
+
+        <button><a href="/diseases/delete/<%= el.id %> ">Delete</a></button>
+    <% }) %>
+
+</body>
+</html>
