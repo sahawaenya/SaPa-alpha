@@ -1,4 +1,3 @@
-
 # SaPa
 Pair Programming P1
 
@@ -16,8 +15,3 @@ dst
 
 // output penyakit dari test symptomp (name, description)
 // routes.post('/testDiseaseResult', Controller.diseaseResult)
-
-# SaPa-alpha
-
-small version of SaPa
-
