@@ -2,6 +2,15 @@ const routes = require('express').Router()
 
 const Controller = require('../controllers/users')
 
+// routes.use(function (req, res, next) {
+//     if (req.session.username && req.session.role === 'seller') {
+//       next()
+//     } 
+//     else if (req.session.username && req.session.role === 'buyer') {
+//       next()
+//     }
+//   })
+
 // sign up (username, passwords, role, fullname, email)
 routes.get('/', Controller.home)
 
