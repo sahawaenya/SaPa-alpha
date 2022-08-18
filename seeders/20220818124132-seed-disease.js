@@ -1,5 +1,5 @@
 'use strict';
-const fs = require('fs');
+const fs = require('fs')
 
 module.exports = {
   up (queryInterface, Sequelize) {
@@ -12,15 +12,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   let data = JSON.parse(fs.readFileSync('./data/roles.json','utf-8'))
-   .map(el=>{
-    return {...el,
-      updatedAt: new Date(),
-      createdAt: new Date()}
-   })
-   
-   console.log(data);
-   return queryInterface.bulkInsert('Roles',data);
+    let diseases = JSON.parse(fs.readFileSync('./data/diseases.json','utf-8')).map(el=>{
+      return {...el,
+        createdAt: new Date(),
+        updatedAt: new Date()}
+    })
+     return queryInterface.bulkInsert('Diseases',diseases);
   },
 
   down (queryInterface, Sequelize) {
@@ -30,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('Roles');
+    return queryInterface.bulkDelete('Diseases');
   }
 };

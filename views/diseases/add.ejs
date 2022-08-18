@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/nav.ejs')%>
+    <h1>Add New Disease</h1>
+    
+    <form action="/diseases/add" method="post">
+
+        <p>
+            Name of Disease <br>
+            <input type="text" name="name">
+        </p>
+
+        <p>
+            <label>Description</label>
+            <br>
+            <textarea name="description" rows="4" cols="50">        
+            </textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Add">
+        </p>
+
+    </form>
+
+</body>
+</html>

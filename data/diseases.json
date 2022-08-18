@@ -1,0 +1,54 @@
+[
+    {
+        "name":"Arthritis",
+        "description":"There are two common types of arthritis: osteoarthritis and rheumatoid arthritis. Among older people, osteoarthritis is more common. This is because osteoarthritis is caused by wear and tear; after all, the older we are, the more we have used our joints. Around eight million people in the UK have this type of arthritis. In contrast, rheumatoid arthritis is an autoimmune disease, where the immune system attacks the lining of the joints.\r\nSymptoms of arthritis include:\r\n- Joint pain, tenderness and stiffness\r\n- Restricted movement\r\n- Inflammation in and around the joints"
+    },
+    {
+        "name":"Asthma",
+        "description":"Asthma occurs when the body’s airways are sensitive to allergens and become inflamed. This inflammation can cause a painful and frightening asthma attack, which causes the airway muscles to tighten and narrow, making it hard to breathe. Most people can manage their asthma very effectively with proper medication. However, asthma left unchecked can be fatal.\r\nSymptoms of asthma include:\r\n- Coughing\r\n- A tight sensation in the chest\r\n- Breathlessness"
+    },
+    {
+        "name":"Cancer",
+        "description":"Cancer is a disease where cells in the body replicate abnormally and form a mass known as a tumour. These abnormal cells multiply, either causing the tumour to grow or the cancerous cells to spread through the bloodstream.\r\nHere are some common cancer symptoms to look out for:\r\n- Finding an unexpected lump\r\n- Unexplained weight loss\r\n- Unexplained blood in the stool, urine, when coughing, or when vomiting"
+    },
+    {
+        "name":"Chronic Bronchitis",
+        "description":"Chronic bronchitis is a condition that affects the lungs and airways. It’s one of several lung conditions which come under the umbrella of COPD (chronic obstructive pulmonary disease).\r\nLook out for the common symptoms of chronic bronchitis, which include:\r\n- Hacking cough, which may bring up mucus\r\n- A sore throat\r\n- Headaches"
+    },
+    {
+        "name":"Chronic Kidney Disease",
+        "description":"There are several other medical conditions that affect the kidneys and can lead to chronic kidney disease. These conditions include kidney infections, high blood pressure, diabetes and kidney inflammation.\r\nAs the condition progresses, you may suffer from:\r\n- Shortness of breath\r\n- Feeling sick\r\n- Blood in your urine"
+    },
+    {
+        "name":"Coronary Heart Disease",
+        "description":"According to the NHS, coronary heart disease (CHD) is what happens when fatty substances build up in the arteries, blocking the blood supply to the heart.\r\nCertain lifestyle choices and other medical conditions can cause CHD. Risk factors include:\r\n- Smoking\r\n- High cholesterol\r\n- High blood pressure"
+    },
+    {
+        "name":"Deep Vein Thrombosis",
+        "description":"Deep vein thrombosis is a blood clot in your deep veins, most commonly in one of your legs. This medical condition is most common in people over the age of 40, and can also lead to further complications, including pulmonary embolism.\r\nHere are the most common symptoms of deep vein thrombosis:\r\n- Pain, swelling and tenderness in one of your legs\r\n- A heavy ache in the affected area\r\n- Red skin – particularly at the back of your leg, below the knee"
+    },
+    {
+        "name":"Dementia",
+        "description":"Dementia is a progressive disorder that affects memory and overall brain function. It is relatively common in older people, affecting around 1 in 14 people over 65. This increases to 1 in 6 people over the age of 80.\r\nSymptoms of dementia include:\r\n- Difficulty remembering recent events.\r\n- Problems in conversation – struggling to follow along or to find the right words.\r\n- Difficulty judging distance."
+    },
+    {
+        "name":"Motor Neurone Disease",
+        "description":"Motor neurone disease is a rare neurological condition where the nervous system degenerates over time. It leads to muscle weakness and loss of mobility. Motor neurone disease, also known as ALS (Amyotrophic Lateral Sclerosis), occurs when the motor neurons that control activities like walking and speaking stop working.\r\nSymptoms include:\r\n- Difficulty swallowing (and sometimes excessive salivation)\r\n- A weakened grip, usually in one hand at first\r\n- Small twitches and flickers of movement, known as fasciculations"
+    },
+    {
+        "name":"Multiple Sclerosis",
+        "description":"Multiple sclerosis (MS) is a neurological condition that affects the brain and spinal cord. The main symptoms are a wide range of problems with vision, movement and balance.\r\nSymptoms of MS include:\r\n- Blurred vision\r\n- Muscle stiffness\r\n- Balance problems"
+    },
+    {
+        "name":"Paget’s Disease of Bone",
+        "description":"Paget’s disease of bone disrupts the normal cycle of bone renewal. It’s triggered by a flaw in the bone cell regeneration system, which causes bone weakness and even bone deformity.\r\nSymptoms include the following:\r\n- Constant, dull bone pain\r\n- Shooting pain that travels along the body\r\n- Numbness and tingling"
+    },
+    {
+        "name":"Parkinson’s Disease",
+        "description":"The main cause of Parkinson’s is a loss of nerve cells in a part of the brain called the substantia nigra. This leads to a reduction in dopamine, an important chemical in the brain. The condition is most common in middle-aged and elderly people.\r\nThe most common symptoms to look out for are:\r\n- Involuntary shaking of particular parts of the body (tremor)\r\n- Slow movement\r\n- Stiff and inflexible muscles"
+    },
+    {
+        "name":"Stroke",
+        "description":"Having a stroke can be life-threatening if you don’t seek medical attention straight away. A stroke occurs when the blood supply to a part of your brain is cut off. Without blood, brain cells can be damaged and may even die.\r\nSymptoms of Stroke include:\r\n- Has their face drooped or fallen on one side? Can they smile?\r\n- Can the person raise both arms and hold them there?\r\n- Are they speaking clearly? Or is their speech slurred or garbled?"
+    }
+]
