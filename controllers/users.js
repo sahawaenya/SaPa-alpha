@@ -25,7 +25,8 @@ class Controller{
             .then((_) => res.redirect('/users'))
             .catch( err => res.send(err))
             })
-        .catch( err => res.send(err))
+           
+        .catch( err => console.log(err))
     }
 
     static signin (req,res) {
