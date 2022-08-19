@@ -27,9 +27,9 @@
 
 ### Level Aplikasi
 
-1. Terdapat fitur Search atau Sort [...]
-2. Terdapat Static method & Instance method [...]
-3. Menggunakan berbagai macam Validasi dari Sequelize [...]
+1. Terdapat fitur Search atau Sort [DONE]
+2. Terdapat Static method & Instance method [DONE]
+3. Menggunakan berbagai macam Validasi dari Sequelize [DONE]
 4. Menggunakan method-method sequelize yang bertujuan untuk CRUD [DONE]
 5. Hooks [DONE]
 6. Helper [DONE]
@@ -38,7 +38,7 @@
 
 1. Landing Page (menggambarkan project) [...]
 2. Register & Login Page [DONE]
-3. Memiliki 1 halaman view yang menampilkan [...]
+3. Memiliki 1 halaman view yang menampilkan [DONE]
     data gabungan dari 2 tabel atau lebih.
 
 ### Explore

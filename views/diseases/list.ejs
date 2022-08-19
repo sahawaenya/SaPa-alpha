@@ -28,16 +28,16 @@
         <tbody>
             <% diseases.forEach(el => { %>
             <tr>
-                <th><%= el.name %></th>
-                <th align="left"><%= el.description %></th>
+                <td><%= el.name %></td>
+                <td align="left"><%= el.description %></td>
 
-                <!-- <th><p align="left"><%= el.description %></p></th> -->
+                <td><p align="left"><%= el.description %></p></td>
 
-                <th>
+                <td>
                     <button><a href="/diseases/edit/<%= el.id %> ">Edit</a></button>
 
                     <button><a href="/diseases/delete/<%= el.id %> ">Delete</a></button>
-                </th>
+                </td>
             </tr>
             <% }) %>
         </tbody>
