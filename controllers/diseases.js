@@ -103,6 +103,33 @@ class Controller{
             res.send(err)
         }) 
     }
+
+    static setDiseasePerProfile(req,res){
+        const titlePage = 'Home Diseases'
+
+        Disease.findByPk(+req.params.id)
+        .then(disease => {
+            res.render('./diseases/edit', { titlePage, disease })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static updateDiseasePerProfile(req, res){
+        let Updateddata = {
+            DiseaseId: req.body.DiseaseId,
+        }
+
+        Profile.update(Updateddata, {include: Disease, where: {id: +req.params.id}})
+        .then(disease => {
+
+            res.redirect('/diseases')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
 }
 
 module.exports = Controller
