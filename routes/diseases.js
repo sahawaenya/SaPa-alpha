@@ -25,4 +25,7 @@ routes.post('/edit/:id', Controller.update)
 // delete disease + description
 routes.get('/delete/:id', Controller.delete)
 
+// disease result
+routes.get('/result', Controller.resultList)
+
 module.exports = routes
