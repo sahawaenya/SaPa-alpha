@@ -92,7 +92,7 @@ class Controller{
         let options ={include: {all:true, nested:true}}
 
         const { search } = req.query
-        if (search) options = { include: {all:true, nested:true}, where: {name: { [Op.iLike]: `%${search}%` }}}
+        if (search) options = { include: {all:true, nested:true}, where: {fullName: { [Op.iLike]: `%${search}%` }}}
 
         Profile.findAll(options)
         .then(profiles => {
@@ -110,10 +110,7 @@ class Controller{
         let options
         // res.send(`${Profileid}`)
 
-        const { search } = req.query
-        if (search) options = { where: {fullName: { [Op.iLike]: `%${search}%` }}}
-
-        Disease.findAll(options)
+        Disease.findAll()
         .then(diseases => {
             res.render('./diseases/setdiseases', { diseases,titlePage, Profileid })
         })
