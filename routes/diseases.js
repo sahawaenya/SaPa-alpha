@@ -2,6 +2,15 @@ const routes = require('express').Router()
 
 const Controller = require('../controllers/diseases')
 
+routes.use(function (req, res, next) {
+    if (req.session.username) {
+        next()
+    } 
+    else {
+        res.redirect('/users/signin/')
+    }
+})
+
 routes.get('/', Controller.home)
 
 // daftar tabel (no, user, disease)

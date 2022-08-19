@@ -55,13 +55,16 @@ class Controller{
         if(+username == 0 || +password == 0) return res.send('Username or Password cannot be empty')
         User.findOne({where:{username:username},include:{all:true,nested:true}})
         .then(data=> {
-            if(!bcrypt.compareSync(password, data.password)) throw `login failed`
-            req.session.id = data.id
+            // res.send(data)
+            console.log(bcrypt.compareSync(password, data.password));
+            if(!bcrypt.compareSync(password, data.password)) {throw `login failed`}
+            console.log(data.id);
+            req.session.masuk = data.id        
             req.session.username = data.username
             req.session.RoleId = data.RoleId
             req.session.fullName = data.fullName
-                        
-            res.send(req.session)
+            res.redirect('/users/')
+            
         })
         .catch(err => res.send(err))
        

@@ -5,6 +5,7 @@ const diseases= require('./diseases')
 
 
 routes.get('/', Controller.home)
+routes.get('/signout', Controller.signout)
 routes.use('/users', users)
 routes.use('/diseases', diseases)
 

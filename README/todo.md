@@ -23,7 +23,7 @@
 ### Routes
 
 1. Minimal terdapat 2 route get dan 1 route post [DONE]
-2. Terdapat route untuk logout [...]
+2. Terdapat route untuk logout [done]
 
 ### Level Aplikasi
 
@@ -36,14 +36,14 @@
 
 ### Pages
 
-1. Landing Page (menggambarkan project) [...]
+1. Landing Page (menggambarkan project) [DONE]
 2. Register & Login Page [DONE]
 3. Memiliki 1 halaman view yang menampilkan [DONE]
     data gabungan dari 2 tabel atau lebih.
 
 ### Explore
 
-1. Membuat sistem login dengan Middleware, Session & Bcryptjs. [...]
+1. Membuat sistem login dengan Middleware, Session & Bcryptjs. [DONE]
 2. Membuat MVP  (minimal 1 package lain) [...]
     sebagai fitur tambahan dalam web-app pair projectmu.
 3. Mendeploy pair project ke cloud (pakai Heroku) [...]

@@ -29,9 +29,9 @@
             <% diseases.forEach(el => { %>
             <tr>
                 <td><%= el.name %></td>
-                <td align="left"><%= el.description %></td>
+                <td style="white-space: normal;"><%= el.description %></td>
 
-                <td><p align="left"><%= el.description %></p></td>
+                <!-- <td style="column-width: 20px;" ><%= el.description %></div></td> -->
 
                 <td>
                     <button><a href="/diseases/edit/<%= el.id %> ">Edit</a></button>
