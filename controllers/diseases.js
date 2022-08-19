@@ -11,10 +11,12 @@ class Controller{
 
     static diseases(req, res){
         const titlePage = 'Home Diseases'
+        let options
 
         const { search } = req.query
+        if (search) options = { where: {name: { [Op.iLike]: `%${search}%` }}}
 
-        Disease.findAll({ where: {name: { [Op.iLike]: `%${search}%` }}})
+        Disease.findAll(options)
         .then(diseases => {
             res.render('./diseases/list', { diseases,titlePage })
         })
