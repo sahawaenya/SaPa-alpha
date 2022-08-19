@@ -1,4 +1,4 @@
-const { Disease } = require('../models')
+const { Disease, Profile, User } = require('../models')
 const { Op } = require("sequelize")
 
 class Controller{
@@ -85,6 +85,23 @@ class Controller{
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static resultList(req, res){
+        const titlePage = 'Home Diseases'
+        let options ={include: {all:true, nested:true}}
+
+        const { search } = req.query
+        if (search) options = { include: {all:true, nested:true}, where: {name: { [Op.iLike]: `%${search}%` }}}
+
+        Profile.findAll(options)
+        .then(profiles => {
+            // res.send(profiles)
+            res.render('./diseases/diseaseResult', { profiles, titlePage })
+        })
+        .catch(err => {
+            res.send(err)
+        }) 
     }
 }
 

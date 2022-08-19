@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/nav.ejs')%>
+
+    <br>
+
+    <h1>Profile Disease List</h1>
+
+    <form action="/diseases/result" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
+
+    <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Fullname</th>
+                <th>Age</th>
+                <th>Disease</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% profiles.forEach((el, index) => { %>
+            <tr>
+                <th><%= ++index %></th>
+                <th><%= el.fullName %></th>
+                <th><%= el.ageNow %></th>
+                <th><%= el.Disease.name %></th>
+
+                <th>
+                    <button><a href="/diseases/set/<%= el.id %> ">Set Disease</a></button>
+                </th>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
