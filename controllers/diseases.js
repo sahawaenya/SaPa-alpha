@@ -1,4 +1,4 @@
-const { Disease } = require('../models')
+const { Disease, Profile, User } = require('../models')
 const { Op } = require("sequelize")
 
 class Controller{
@@ -81,6 +81,50 @@ class Controller{
         Disease.destroy({ where: { id: +req.params.id }})
         .then(disease => {
             res.redirect('/diseases/list')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static resultList(req, res){
+        const titlePage = 'Home Diseases'
+        let options ={include: {all:true, nested:true}}
+
+        const { search } = req.query
+        if (search) options = { include: {all:true, nested:true}, where: {name: { [Op.iLike]: `%${search}%` }}}
+
+        Profile.findAll(options)
+        .then(profiles => {
+            // res.send(profiles)
+            res.render('./diseases/diseaseResult', { profiles, titlePage })
+        })
+        .catch(err => {
+            res.send(err)
+        }) 
+    }
+
+    static setDiseasePerProfile(req,res){
+        const titlePage = 'Home Diseases'
+
+        Disease.findByPk(+req.params.id)
+        .then(disease => {
+            res.render('./diseases/edit', { titlePage, disease })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static updateDiseasePerProfile(req, res){
+        let Updateddata = {
+            DiseaseId: req.body.DiseaseId,
+        }
+
+        Profile.update(Updateddata, {include: Disease, where: {id: +req.params.id}})
+        .then(disease => {
+
+            res.redirect('/diseases')
         })
         .catch(err => {
             res.send(err)

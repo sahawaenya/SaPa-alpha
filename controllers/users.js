@@ -11,7 +11,7 @@ class Controller{
 
        return User.findAll({include:{all:true, nested:true}})
         .then(data => {
-            // res.send(data)
+            res.send(data)
            let coba = req.session.coba = 'coba 11111111111111a'
             res.render('./user/home', {titlePage, coba, data, Help})
         })

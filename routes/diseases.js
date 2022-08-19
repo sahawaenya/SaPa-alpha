@@ -37,4 +37,10 @@ routes.get('/delete/:id', Controller.delete)
 // disease result
 routes.get('/result', Controller.resultList)
 
+// disease edit
+routes.get('/set/:Profile.id', Controller.setDiseasePerProfile)
+
+// disease set
+routes.post('/set/:Profile.id', Controller.updateDiseasePerProfile)
+
 module.exports = routes
