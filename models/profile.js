@@ -25,15 +25,62 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Profile.init({
-    DiseaseId: DataTypes.INTEGER,
+    DiseaseId:DataTypes.INTEGER,
     UserId: DataTypes.INTEGER,
-    fullName: DataTypes.STRING,
-    bornDate: DataTypes.DATE,
-    phoneNumber: DataTypes.STRING,
-    imageUrl: DataTypes.STRING
+    fullName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Full Name is required'
+        },
+        notNull: {
+          msg: 'Full Name is required'
+        }
+      }
+    },
+    bornDate: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Date is required'
+        },
+        notNull: {
+          msg: 'Date is required'
+        }
+      }
+    },
+    phoneNumber:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Phone Number is required'
+        },
+        notNull: {
+          msg: 'Phone Number is required'
+        }
+      }
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Image URL is required'
+        },
+        notNull: {
+          msg: 'Image URL is required'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Profile',
+  });
+  Profile.addHook('beforeCreate', (profile, options) => {
+  profile.DiseaseId = 1
   });
   return Profile;
 };

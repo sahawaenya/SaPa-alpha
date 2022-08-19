@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/nav.ejs')%>
+    <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>Name of Diseases</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% diseases.forEach(el => { %>
+                <tr>
+                    <td><%= el.name %></td>
+                    <form action="/diseases/set/<%= Profileid %>" method="post">
+                    <td style="white-space: normal;"><%= el.description %></td>
+                    
+                <!-- <td style="column-width: 20px;" ><%= el.description %></div></td> -->
+                <input type="hidden" name="diseasesId" value="<%= el.id %>">
+
+                <td>
+                    <button type="submit">Set Diseases</a></button>
+                </form>
+                    
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

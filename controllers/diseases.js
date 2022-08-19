@@ -106,29 +106,33 @@ class Controller{
 
     static setDiseasePerProfile(req,res){
         const titlePage = 'Home Diseases'
+        const {Profileid} =req.params
+        let options
+        // res.send(`${Profileid}`)
 
-        Disease.findByPk(+req.params.id)
-        .then(disease => {
-            res.render('./diseases/edit', { titlePage, disease })
+        const { search } = req.query
+        if (search) options = { where: {name: { [Op.iLike]: `%${search}%` }}}
+
+        Disease.findAll(options)
+        .then(diseases => {
+            res.render('./diseases/setdiseases', { diseases,titlePage, Profileid })
         })
         .catch(err => {
             res.send(err)
-        })
+        })  
     }
 
     static updateDiseasePerProfile(req, res){
-        let Updateddata = {
-            DiseaseId: req.body.DiseaseId,
+    //    res.send(req.body)
+       const {Profileid} = req.params
+
+       Profile.update({ DiseaseId: req.body.diseasesId }, {
+        where: {
+          id: Profileid
         }
-
-        Profile.update(Updateddata, {include: Disease, where: {id: +req.params.id}})
-        .then(disease => {
-
-            res.redirect('/diseases')
-        })
-        .catch(err => {
-            res.send(err)
-        })
+      })
+      .then((_)=> res.redirect('/diseases/result'))
+      .catch(err => res.send(err))
     }
 }
 

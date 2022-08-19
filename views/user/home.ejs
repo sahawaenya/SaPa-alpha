@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-UA-Compatible</title>
 </head>
 <body>
-    <%if(typeof coba) %><%=  coba %>
-
-    <%- include('../partials/nav.ejs')%>
+    HOME USER
+        <%- include('../partials/nav.ejs')%>
     <button onclick="location.href='/users/signup'">Signup User</button>
-    <button onclick="location.href='/users/signin'">Signin User</button>
     <table border="2">
         <thead>
             <tr>
@@ -45,6 +43,5 @@
             <% }); %>            
         </tbody>
     </table>
-    HOME USER
 </body>
 </html>
