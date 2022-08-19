@@ -21,13 +21,40 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
-      notNull: true,            
-      notEmpty: true}   
+      validate: {
+        notEmpty: {
+          msg: 'Username is required'
+        },
+        notNull: {
+          msg: 'Username is required'
+        }
+      }
     },
-    password: DataTypes.STRING,
-    email: DataTypes.STRING,
-    RoleId: DataTypes.INTEGER
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Password is required'
+        },
+        notNull: {
+          msg: 'Password is required'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'E-Mail is required'
+        },
+        notNull: {
+          msg: 'E-Mail is required'
+        }
+      }
+    },
+    RoleId:  DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
@@ -37,6 +64,7 @@ module.exports = (sequelize, DataTypes) => {
     const hash = bcrypt.hashSync(user.password, salt)
 
     user.password = hash
+    user.RoleId = 2
   });
   return User;
 };

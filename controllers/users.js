@@ -11,9 +11,8 @@ class Controller{
 
        return User.findAll({include:{all:true, nested:true}})
         .then(data => {
-            res.send(data)
-           let coba = req.session.coba = 'coba 11111111111111a'
-            res.render('./user/home', {titlePage, coba, data, Help})
+            // res.send(data)
+            res.render('./user/home', {titlePage,  data, Help})
         })
         .catch(err => res.send(err))
 
@@ -44,7 +43,8 @@ class Controller{
     }
 
     static getSignin (req,res) {
-        console.log(req.session.coba);
+
+
  
         res.render('./user/signin')
     }
@@ -57,7 +57,7 @@ class Controller{
         .then(data=> {
             // res.send(data)
             console.log(bcrypt.compareSync(password, data.password));
-            if(!bcrypt.compareSync(password, data.password)) {throw `login failed`}
+            if(!bcrypt.compareSync(password, data.password)) {throw `username/password wrong!`}
             console.log(data.id);
             req.session.masuk = data.id        
             req.session.username = data.username
