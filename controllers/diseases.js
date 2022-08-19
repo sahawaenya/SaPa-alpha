@@ -111,7 +111,7 @@ class Controller{
         // res.send(`${Profileid}`)
 
         const { search } = req.query
-        if (search) options = { where: {name: { [Op.iLike]: `%${search}%` }}}
+        if (search) options = { where: {fullName: { [Op.iLike]: `%${search}%` }}}
 
         Disease.findAll(options)
         .then(diseases => {
