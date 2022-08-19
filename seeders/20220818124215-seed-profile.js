@@ -1,6 +1,5 @@
 'use strict';
 const fs = require('fs')
-const bcrypt = require('bcrypt')
 
 module.exports = {
   up (queryInterface, Sequelize) {
@@ -13,15 +12,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    let users = JSON.parse(fs.readFileSync('./data/users.json','utf-8')).map(el=>{
-      const salt = bcrypt.genSaltSync(10)
-      const hash = bcrypt.hashSync(el.password, salt)
+    let users = JSON.parse(fs.readFileSync('./data/profiles.json','utf-8')).map(el=>{
       return {...el,
-        password: hash,
         createdAt: new Date(),
         updatedAt: new Date()}
     })
-    return queryInterface.bulkInsert('Users',users);
+    return queryInterface.bulkInsert('Profiles',users);
   },
 
   down (queryInterface, Sequelize) {
@@ -31,6 +27,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('Users');
+    return queryInterface.bulkDelete('Profiles');
   }
 };

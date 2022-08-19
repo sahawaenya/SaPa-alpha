@@ -3,18 +3,18 @@
     "username": "sahawae",
     "email": "sahawae@jimail.com",
     "password": "sahawae123",
-    "role": "admin"
+    "RoleId": "1"
   },
   {
     "username": "sahakedua",
     "email": "sahawaekedua@jimail.com",
     "password": "sahawae123",
-    "role": "client"
+    "RoleId": "3"
   },
   {
     "username": "sahaketiga",
     "email": "sahawaeketiga@jimail.com",
     "password": "sahawae123",
-    "role": "client"
+    "RoleId": "3"
   }
 ]

@@ -1,0 +1,17 @@
+[
+    {
+        "UserId":"1",
+        "DiseaseId":"1",
+        "imageUrl":"https://i.pinimg.com/originals/07/7c/a8/077ca88c5e28d9a5dabbb377667016d1.jpg"
+    },
+    {
+        "UserId":"2",
+        "DiseaseId":"1",
+        "imageUrl":"https://assets.pikiran-rakyat.com/crop/0x0:0x0/750x500/photo/2022/06/24/1560743332.jpg"
+    },
+    {
+        "UserId":"3",
+        "DiseaseId":"9",
+        "imageUrl":"https://static.zerochan.net/Nico.Robin.full.3508902.jpg"
+    }
+]

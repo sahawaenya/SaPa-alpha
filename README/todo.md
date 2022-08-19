@@ -6,7 +6,7 @@
      - email 
      - password
      - role
-3. Memiliki 2 asosiasi yang berbeda :  [1/2]
+3. Memiliki 2 asosiasi yang berbeda :  [2/2]
 
 - -  One to One  1:1  ✅
     

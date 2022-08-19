@@ -14,9 +14,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.hasOne(models.Profile)
     }
+
+
   }
   User.init({
-    username: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+      notNull: true,            
+      notEmpty: true}   
+    },
     password: DataTypes.STRING,
     email: DataTypes.STRING,
     RoleId: DataTypes.INTEGER
@@ -29,7 +37,6 @@ module.exports = (sequelize, DataTypes) => {
     const hash = bcrypt.hashSync(user.password, salt)
 
     user.password = hash
-    user.role = 5
   });
   return User;
 };

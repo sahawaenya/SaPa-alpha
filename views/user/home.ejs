@@ -12,7 +12,39 @@
     <%- include('../partials/nav.ejs')%>
     <button onclick="location.href='/users/signup'">Signup User</button>
     <button onclick="location.href='/users/signin'">Signin User</button>
-
+    <table border="2">
+        <thead>
+            <tr>
+                <td>
+                    No
+                </td>
+                <td>
+                    Image
+                </td>
+                <td>
+                    username
+                </td>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Age
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((el, index) => {%>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><img src="<%= Help.getImageUser(el) %>" alt="<%= el.name %>" width="200px"></td>
+                    <td><%= el.username %></td>
+                    <td><%= el.Profile.fullName %></td>
+                    <td><%= el.Profile.ageNow %></td>
+                </tr>
+                
+            <% }); %>            
+        </tbody>
+    </table>
     HOME USER
 </body>
 </html>

@@ -15,13 +15,22 @@ module.exports = (sequelize, DataTypes) => {
       Profile.belongsTo(models.Disease)
       Profile.belongsTo(models.User)
     }
+
+    get ageNow(){
+      // console.log(this.bornDate);
+      if(this.bornDate){
+        return new Date().getFullYear() - this.bornDate.getFullYear()
+      }
+      else {return 'Born date is not set'}
+    }
   }
   Profile.init({
     DiseaseId: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER,
     fullName: DataTypes.STRING,
     bornDate: DataTypes.DATE,
-    phoneNumber: DataTypes.STRING
+    phoneNumber: DataTypes.STRING,
+    imageUrl: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Profile',
