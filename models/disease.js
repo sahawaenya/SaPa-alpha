@@ -15,8 +15,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Disease.init({
-    name: DataTypes.STRING,
-    description: DataTypes.TEXT
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Name of Disease is required'
+        },
+        notNull: {
+          msg: 'Name of Disease is required'
+        }
+      }
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Description of Disease is required'
+        },
+        notNull: {
+          msg: 'Description of Disease is required'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Disease',

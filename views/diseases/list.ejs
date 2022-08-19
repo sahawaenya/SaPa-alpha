@@ -6,19 +6,41 @@
 <body>
     <%- include('../partials/nav.ejs')%>
 
+    <br>
+
     <button><a href="/diseases/add">Add New Disease</a></button>
 
     <h1>Diseases List</h1>
 
-    <% diseases.forEach(el => { %>
-        <h3><%= el.name %></h3>
+    <form action="/diseases/list" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
 
-        <p><%= el.description %> </p>
+    <table width="100%" border="1" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>Name of Diseases</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% diseases.forEach(el => { %>
+            <tr>
+                <th><%= el.name %></th>
+                <th align="left"><%= el.description %></th>
 
-        <button><a href="/diseases/edit/<%= el.id %> ">Edit</a></button>
+                <!-- <th><p align="left"><%= el.description %></p></th> -->
 
-        <button><a href="/diseases/delete/<%= el.id %> ">Delete</a></button>
-    <% }) %>
+                <th>
+                    <button><a href="/diseases/edit/<%= el.id %> ">Edit</a></button>
 
+                    <button><a href="/diseases/delete/<%= el.id %> ">Delete</a></button>
+                </th>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>

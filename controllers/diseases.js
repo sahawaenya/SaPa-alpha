@@ -1,4 +1,6 @@
 const { Disease } = require('../models')
+const { Op } = require("sequelize")
+
 class Controller{
 
     static home(req, res){
@@ -9,7 +11,10 @@ class Controller{
 
     static diseases(req, res){
         const titlePage = 'Home Diseases'
-        Disease.findAll()
+
+        const { search } = req.query
+
+        Disease.findAll({ where: {name: { [Op.iLike]: `%${search}%` }}})
         .then(diseases => {
             res.render('./diseases/list', { diseases,titlePage })
         })
@@ -33,7 +38,11 @@ class Controller{
             res.redirect('/diseases/list')
         })
         .catch(err => {
-            res.send(err)
+            if (err.name == 'SequelizeValidationError') {
+                res.send(err.errors.map(el => el.message))
+            }else {
+               res.send(err) 
+            }
         })
     }
 
